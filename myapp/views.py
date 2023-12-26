@@ -4,17 +4,27 @@ from django.shortcuts import get_object_or_404, render
 from .models import Project,Tareas
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    title = 'Django ok!!'
+    return render(request, 'index.html', {
+        'titulo': title
+    })
 def about(request):
     return render(request, 'about.html')
 
 def projects(request):
-    projects = list(Project.objects.values()) 
-    return render(request, 'projects.html')
+    #projects = list(Project.objects.values()) 
+    projects = Project.objects.all()
+    return render(request, 'projects.html',{
+        'projects': projects
+    })
+
 def taks(request):
     #tareas = Tareas.objects.get(id=id)
     #tareas = get_object_or_404(Tareas, id=id)
-    return render(request, 'taks.html')
+    tareas = Tareas.objects.all()
+    return render(request, 'taks.html',{
+        'tareas':tareas
+    })
 
 
 
