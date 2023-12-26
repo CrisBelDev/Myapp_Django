@@ -7,4 +7,6 @@ urlpatterns = [
     path('hello/<str:usuario>', views.hello),
     path('projects/', views.projects),
     path('taks/', views.taks),
+    path('create_taks/', views.create_taks),
+    path('create_project/',views.create_project),
 ]
