@@ -1,25 +1,37 @@
-<nav>
-    <ul>
-        <li>
-            <a href="/">Home</a>
-        </li>
-        <li>
-            <a href="/projects">projects</a>
-        </li>
-        <li>
-            <a href="/taks">taks</a>
-        </li>
-        <li>
-            <a href="/about">about</a>
-        </li>
-        <li>
-            <a href="/create_taks">create taks</a>
-        </li>
-        <li>
-            <a href="/create_project">create project</a>
-        </li>
-    </ul>
-</nav>
-
-{% block content %}
-{% endblock %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django projects</title>
+    <link rel="stylesheet" href="{% static '/css/styles.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="/projects">projects</a>
+            </li>
+            <li>
+                <a href="{% url 'taks' %}">taks</a>
+            </li>
+            <li>
+                <a href="{% url 'about' %}">about</a>
+            </li>
+            <li>
+                <a href="{% url 'create_taks' %}">create taks</a>
+            </li>
+            <li>
+                <a href="{% url 'create_projects' %}">create project</a>
+            </li>
+        </ul>
+    </nav>
+    
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

@@ -1,8 +1,9 @@
 {% extends 'layouts/base.html' %}
 
+{% load static %}
 {% block content %}
 
 <h1>{{ titulopython  }}</h1>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet dolor sapiente culpa mollitia voluptates enim atque laudantium reprehenderit voluptatum. Aliquid, accusantium. Quod quibusdam culpa molestiae velit laboriosam, iste similique odio.</p>
-
+<img src = "{% static 'img_static.jpg' %}" width = "200">
 {% endblock %}
